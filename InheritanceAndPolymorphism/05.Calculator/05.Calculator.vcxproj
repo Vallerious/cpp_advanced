@@ -77,6 +77,9 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -115,6 +118,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CalculationEngine.h" />
+    <ClInclude Include="DivisionOperation.h" />
+    <ClInclude Include="Extensions.h" />
+    <ClInclude Include="InputInterpreter.h" />
+    <ClInclude Include="MemorySave.h" />
+    <ClInclude Include="MultiplicationOperation.h" />
+    <ClInclude Include="Operation.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CalculatorMain.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
