@@ -4,8 +4,20 @@
 #include <string>
 #include <vector>
 #include <utility>
+#include <sstream>
 
-class Company {
+struct HasInfo {
+	virtual std::string getInfo() const = 0;
+};
+
+struct HasId {
+	virtual int getId() const = 0;
+};
+
+class Company : public HasInfo, public HasId {
+	int id;
+	std::string name;
+	std::vector<std::pair<char, char> > employees;
 public:
     Company();
 
@@ -19,7 +31,9 @@ public:
 
     std::string getInfo() const;
 
-    std::ostream& operator<<(std::ostream& stream, const Company& c);
+	friend std::ostream& operator<<(std::ostream& stream, const Company& c);
+
+	friend std::istream& operator>>(std::istream& stream, Company& c);
 };
 
 #endif // !COMPANY_H
