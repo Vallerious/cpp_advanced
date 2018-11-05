@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{196068EA-4DD2-4E8E-AC03-9EE7C956E799}</ProjectGuid>
-    <RootNamespace>My04Word</RootNamespace>
+    <ProjectGuid>{9486A877-8025-44D1-9B3A-EDF49F0F2202}</ProjectGuid>
+    <RootNamespace>My05Calculator</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -70,14 +70,6 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup />
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
-      <Optimization>Disabled</Optimization>
-      <SDLCheck>true</SDLCheck>
-      <ConformanceMode>true</ConformanceMode>
-    </ClCompile>
-  </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -88,6 +80,14 @@
     <Link>
       <SubSystem>Console</SubSystem>
     </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -118,12 +118,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="CommandInterface.h" />
-    <ClInclude Include="Initialization.h" />
-    <ClInclude Include="TextTransform.h" />
+    <ClInclude Include="CalculationEngine.h" />
+    <ClInclude Include="DivisionOperation.h" />
+    <ClInclude Include="Extensions.h" />
+    <ClInclude Include="InputInterpreter.h" />
+    <ClInclude Include="MemorySave.h" />
+    <ClInclude Include="MultiplicationOperation.h" />
+    <ClInclude Include="Operation.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="WordSkeleton.cpp" />
+    <ClCompile Include="CalculatorMain.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

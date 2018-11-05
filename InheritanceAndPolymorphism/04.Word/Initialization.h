@@ -28,9 +28,11 @@ private:
         }
     };
 public:
-    FullCommandInterface(std::string& text) : CommandInterface(text) {}
+    FullCommandInterface(std::string& text) : CommandInterface(text) {
+		this->init();
+	}
 protected:
-    std::vector<Command> initCommands() {
+    std::vector<Command> initCommands() override {
         std::vector<Command> commands = CommandInterface::initCommands();
 
         commands.push_back(Command("cut", std::make_shared<CutTransform>()));
@@ -39,6 +41,8 @@ protected:
         return commands;
     }
 };
+
+std::string FullCommandInterface::cutText;
 
 std::shared_ptr<CommandInterface> buildCommandInterface(std::string& text) {
     return std::make_shared<FullCommandInterface>(text);
