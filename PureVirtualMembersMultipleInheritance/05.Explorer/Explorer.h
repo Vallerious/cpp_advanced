@@ -14,8 +14,12 @@
 class Explorer {
 	std::vector<std::shared_ptr<FileSystemObject> >* fileSystemObjects;
 	std::shared_ptr<FileSystemObject> cutItem;
+  bool hasShortcuts;
+  std::shared_ptr<Shortcuts> shortcuts;
 public:
-	Explorer(std::vector<std::shared_ptr<FileSystemObject> >& fileSystemObjects) : fileSystemObjects(&fileSystemObjects) {}
+	Explorer(std::vector<std::shared_ptr<FileSystemObject> >& fileSystemObjects) :
+      fileSystemObjects(&fileSystemObjects),
+      hasShortcuts(false) {}
 
 	void createFile(std::string filename, std::string contents) {
 		this->fileSystemObjects->push_back(std::make_shared<File>(filename, contents));
@@ -29,6 +33,7 @@ public:
 		for (auto it = this->fileSystemObjects->begin(); it != this->fileSystemObjects->end(); it++) {
 			if ((*it)->getName() == filename) {
 				this->cutItem = (*it);
+        this->fileSystemObjects->erase(it);
 				break;
 			}
 		}
@@ -39,36 +44,27 @@ public:
 	}
 
 	void createShortcut(std::string filename) {
-		auto shortcuts = std::make_shared<Shortcuts>();
-		bool hasShortcuts = false;
+      if (!hasShortcuts) {
+          this->shortcuts = std::make_shared<Shortcuts>();
 
-		for (auto it = this->fileSystemObjects->begin(); it != this->fileSystemObjects->end(); it++) {
-			if ((*it)->getName() == "[shortcuts]") {
-				shortcuts = std::dynamic_pointer_cast<Shortcuts>(*it);
-				hasShortcuts = true;
-				break;
-			}
-		}
-		
-		for (auto it = this->fileSystemObjects->begin(); it != this->fileSystemObjects->end(); it++) {
-			if ((*it)->getName() == filename) {
-				shortcuts->add(*it);
-				break;
-			}
-		}
+          this->fileSystemObjects->push_back(this->shortcuts);
+          this->hasShortcuts = true;
+      }
 
-		if (!hasShortcuts) {
-			this->fileSystemObjects->push_back(shortcuts);
-		}
+      for (auto it = this->fileSystemObjects->begin(); it != this->fileSystemObjects->end(); it++) {
+          if ((*it)->getName() == filename) {
+              //this->shortcuts->add(&(*(*it)));
+          }
+      }
 	}
 
 	void navigate(std::string path) {
-		if (path == "..") {
-			
-		}
-		else {
-			
-		}
+      if (path == "..") {
+          
+      }
+      else {
+          
+      }
 	}
 };
 
