@@ -15,15 +15,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CommandInterface.h">
+    <ClInclude Include="Company.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TextTransform.h">
+    <ClInclude Include="OrderedInserter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="WordSkeleton.cpp">
+    <ClCompile Include="OrderMain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

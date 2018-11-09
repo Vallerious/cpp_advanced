@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{1BDD9694-D296-40C6-93AC-C30D35D1FF67}</ProjectGuid>
-    <RootNamespace>My04Word</RootNamespace>
+    <ProjectGuid>{878975FA-1434-4015-99DF-F247E0DC40B5}</ProjectGuid>
+    <RootNamespace>My02Find</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -118,11 +118,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="CommandInterface.h" />
-    <ClInclude Include="TextTransform.h" />
+    <ClInclude Include="Company.h" />
+    <ClInclude Include="Find.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="WordSkeleton.cpp" />
+    <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

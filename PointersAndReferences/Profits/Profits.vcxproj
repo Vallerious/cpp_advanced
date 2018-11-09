@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{1BDD9694-D296-40C6-93AC-C30D35D1FF67}</ProjectGuid>
-    <RootNamespace>My04Word</RootNamespace>
+    <ProjectGuid>{B4A72D93-A0D1-4BD9-84C0-011373BF87B4}</ProjectGuid>
+    <RootNamespace>Profits</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -118,11 +118,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="CommandInterface.h" />
-    <ClInclude Include="TextTransform.h" />
+    <ClInclude Include="Company.h" />
+    <ClInclude Include="ProfitCalculator.h" />
+    <ClInclude Include="ProfitReport.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="WordSkeleton.cpp" />
+    <ClCompile Include="ProfitsMain.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
